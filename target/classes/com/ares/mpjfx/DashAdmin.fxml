@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ares.mpjfx.DashAdmin">
+   <children>
+      <ToolBar prefHeight="45.0" prefWidth="760.0" style="-fx-background-color: black;">
+        <items>
+            <ImageView fitHeight="40.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/222_white.png" />
+               </image>
+            </ImageView>
+          <Button fx:id="volbtn" mnemonicParsing="false" onAction="#volbtn" style="-fx-background-color: white;" text="Vols" />
+            <Button fx:id="reservebtn" mnemonicParsing="false" style="-fx-background-color: white;" text="Reservation" />
+            <Button fx:id="escalebtn" mnemonicParsing="false" onAction="#escalebtn" style="-fx-background-color: white;" text="Escales" />
+        </items>
+      </ToolBar>
+      <Pane fx:id="escales" layoutY="45.0" prefHeight="538.0" prefWidth="760.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="417.0" layoutX="14.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" width="343.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="417.0" layoutX="403.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" width="343.0" />
+            <Label layoutX="14.0" layoutY="30.0" text="Liste des Escales">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="403.0" layoutY="30.0" text="Ajouter un Escale">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView layoutX="29.0" layoutY="81.0" prefHeight="341.0" prefWidth="314.0">
+              <columns>
+                <TableColumn prefWidth="106.0" text="Escale" />
+                <TableColumn prefWidth="103.0" text="Arrivee" />
+                  <TableColumn prefWidth="104.0" text="Depart" />
+              </columns>
+            </TableView>
+            <Button fx:id="delEsc" layoutX="217.0" layoutY="437.0" mnemonicParsing="false" text="delete" />
+            <Button fx:id="updateEsc" layoutX="282.0" layoutY="437.0" mnemonicParsing="false" text="Modifier" />
+            <Label layoutX="416.0" layoutY="81.0" text="Escale" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nom_esc" layoutX="416.0" layoutY="111.0" prefHeight="25.0" prefWidth="314.0" />
+            <Label layoutX="416.0" layoutY="166.0" text="Arrivee" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="416.0" layoutY="243.0" text="Depart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="arr_esc" layoutX="416.0" layoutY="198.0" prefHeight="25.0" prefWidth="314.0" />
+            <TextField fx:id="dep_esc" layoutX="416.0" layoutY="270.0" prefHeight="25.0" prefWidth="314.0" />
+            <Button fx:id="AddEscale" layoutX="678.0" layoutY="337.0" mnemonicParsing="false" onAction="#AddEscale" text="Ajouter" />
+         </children>
+      </Pane>
+      <Pane fx:id="Vols" layoutY="46.0" prefHeight="562.0" prefWidth="760.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="277.0" layoutX="4.0" layoutY="35.0" opacity="0.91" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="753.0" />
+            <TableView fx:id="tableview" layoutX="13.0" layoutY="74.0" prefHeight="200.0" prefWidth="732.0">
+              <columns>
+                <TableColumn fx:id="vol_name" prefWidth="105.0" text="Vols" />
+                <TableColumn fx:id="vol_date" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="vol_hd" prefWidth="101.0" text="Heure Depart" />
+                  <TableColumn fx:id="vol_ha" prefWidth="98.0" text="Heure Arrivee" />
+                  <TableColumn minWidth="5.0" prefWidth="238.0" text="Escale">
+                     <columns>
+                        <TableColumn prefWidth="89.0" text="Escale" />
+                        <TableColumn prefWidth="79.0" text="Arrivee" />
+                        <TableColumn prefWidth="79.0" text="Depart" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="status" prefWidth="115.0" text="Status" />
+              </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="35.0" prefHeight="17.0" prefWidth="54.0" text="Vols" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="4.0" layoutY="321.0" stroke="BLACK" strokeType="INSIDE" width="753.0" />
+            <Label layoutX="14.0" layoutY="321.0" text="Add Vol" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="374.0" text="Vol" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="12.0" layoutY="439.0" text="Date" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="volName" layoutX="12.0" layoutY="395.0" prefHeight="25.0" prefWidth="202.0" />
+            <TextField fx:id="heureDep" layoutX="284.0" layoutY="395.0" prefHeight="25.0" prefWidth="202.0" />
+            <Label layoutX="284.0" layoutY="374.0" text="Heure Depart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="date" layoutX="12.0" layoutY="460.0" prefHeight="25.0" prefWidth="202.0" />
+            <Label layoutX="284.0" layoutY="441.0" text="Heure Aririvee" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="heureArr" layoutX="284.0" layoutY="460.0" prefHeight="25.0" prefWidth="202.0" />
+            <Button fx:id="addVol" layoutX="613.0" layoutY="427.0" mnemonicParsing="false" onAction="#addVol" text="Add" />
+            <Button fx:id="list" layoutX="711.0" layoutY="281.0" mnemonicParsing="false" onAction="#list" text="List" />
+            <Button layoutX="641.0" layoutY="281.0" mnemonicParsing="false" text="Button" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+   </children>
+</Pane>

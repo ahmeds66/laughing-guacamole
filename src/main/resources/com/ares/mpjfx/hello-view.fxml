@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ares.mpjfx.HelloController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="181.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="419.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.0" minHeight="4.0" prefHeight="4.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="263.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <ImageView fitHeight="269.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../../../Images/astronaut.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="180.0">
+         <image>
+            <Image url="@../../../Images/222_white.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <Button fx:id="loginbtn" layoutX="359.0" layoutY="16.0" mnemonicParsing="false" onAction="#loginload" text="Login" textAlignment="CENTER" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label layoutX="86.0" layoutY="34.0" text="Welcome To Ares" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="116.0" layoutY="81.0" text="Your flight reservation partner" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="reservebtn" layoutX="192.0" layoutY="168.0" mnemonicParsing="false" onAction="#reserve" text="Reserve Now !" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Label layoutX="85.0" layoutY="32.0" text="ARES 2022" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</GridPane>
